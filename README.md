@@ -23,10 +23,9 @@ Q1. As an analyst, you need to submit details to the CTI team. What is the signa
 <img src="https://i.imgur.com/2HxuPKQ.png" height="80%" width="80%" alt="after.jpg"/>
 
 Answer: Team ApashKirikiri2.0
-
 <br />
 <br />
-
+<hr />
 Q2. The attacker deleted some files. What are they? (Alphabetical order based on filename) (2 points)
 
 - We investigate the 'Fim2.jpg' file and we can see two files were deleted with rule id 553.
@@ -35,10 +34,9 @@ Q2. The attacker deleted some files. What are they? (Alphabetical order based on
 <img src="https://i.imgur.com/nypU4P0.png" height="80%" width="80%" alt="deleted files"/>
 
 Answer: Access_log, Error_log
-
 <br />
 <br />
-
+<hr />
 Q3. What is the scanner used by the attacker to identify the vulnerability? (3 points)
 
 - Start by going through our available fields. It is pretty limited in what we can search for.
@@ -58,10 +56,9 @@ Q3. What is the scanner used by the attacker to identify the vulnerability? (3 p
 
 
 Answer: Nikto
-
 <br />
 <br />
-
+<hr />
 Q4. Which PHP page is vulnerable to Remote File Inclusion (RFI)? (2 points)
 
 - Personally had no idea what RFI was and how it worked. So I did a quick google search.
@@ -74,20 +71,18 @@ Cool. So I'm going to try look for a file that was downloaded from a suspicious 
 <img src="https://i.imgur.com/SH7w7dr.png" height="80%" width="80%" alt="fields"/>
 
 Answer: getimagesonly.php
-
 <br />
 <br />
-
+<hr />
 Q5. What is the IP address of the remote attacker? (3 points)
 
 - I just looked at the IP that was trying to download the suspicious file from the previous question.
 <img src="https://i.imgur.com/5plWK7E.png" height="80%" width="80%" alt="attacker IP"/>
 
 Answer: 91.192.103.35
-
 <br />
 <br />
-
+<hr />
 Q6. What is the name of the PHP shell? (2 points)
 
 - I had no clue what a PHP shell was either so I had to do some research on that.
@@ -95,19 +90,17 @@ Q6. What is the name of the PHP shell? (2 points)
 - Cool so I knew to look for a PHP file, lucky for me I had a good idea where to look. 'backdoor.jpg.php'. Clearly a suspicious sounding PHP file pretending to be a JPG file.
 
 Answer: backdoor.jpg.php
-
 <br />
 <br />
-
+<hr />
 Q7. The attacker downloaded the PHP shell from a file-hosting website. What is the name of the website? (2 points)
 
 - This ones pretty self explanatory, we saw from question 4 where the file was downloaded from.
 
 Answer: mediafire.com
-
 <br />
 <br />
-
+<hr />
 Q8. What time was the first command executed through the PHP shell? (3 points)
 
 -We search through the logs with the PHP shell file. Looking at the time from when it was downloaded onwards. I can see the command 'whoami'
@@ -115,30 +108,27 @@ Q8. What time was the first command executed through the PHP shell? (3 points)
 <img src="https://i.imgur.com/VVy2iDI.png" height="80%" width="80%" alt="first command"/>
 
 Answer: 18/02/2021 11:42:44
-
 <br />
 <br />
-
+<hr />
 Q9. Which config file does the attacker attempt to read using the command 'cat'? (2 points)
 
 -The keywords I was looking for was cat and config file.  I filtered for "backdoor.jpg.php" and "cat"
 <img src="https://i.imgur.com/2pnmg2v.png" height="80%" width="80%" alt="first command"/>
 
 Answer: lampp/htdocs/MikePharmaSystem/config.php
-
 <br />
 <br />
-
+<hr />
 Q10. At what time was the database dumped by the attacker? (2 points)
 
 -A quick google search tells me a database dump file extension would be db or dump. So I try filtering for those two. I find a log with the message saying 'db_export.php'.
 <img src="https://i.imgur.com/uVFcwlb.png" height="80%" width="80%" alt="first command"/>
 
 Answer: 18/02/2021 11:44:59
-
 <br />
 <br />
-
+<hr />
 Q11. The attacker exfiltrated the database records. What is the database name? (Just the name, without any extension) (2 points)
 
 -I look at the details of the request to export the database. I can see the name of the database.
